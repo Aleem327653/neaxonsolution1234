@@ -39,4 +39,10 @@ public class HomeController {
     public Company updateCompany(@RequestBody Company com,@PathVariable Integer id){
         return this.serviceImp.updateCompany(com,id);
     }
+
+    @DeleteMapping("{id}")
+    public String deleteCompany(@PathVariable Integer id){
+        this.serviceImp.deleteCompany(id);
+        return "Deleted successfully";
+    }
 }

@@ -11,4 +11,6 @@ public interface CompanyService {
 
     public Company findByCompanyName(String companyName);
     public Company updateCompany(Company company,Integer id);
+
+    public void deleteCompany(Integer id);
 }
