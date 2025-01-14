@@ -8,7 +8,8 @@ public class NexonApplication {
 
 	public static void main(String[] args) {
         int x=10;
-		int y=20;
+		    int y=20;
+        String str="Aleem";
 		SpringApplication.run(NexonApplication.class, args);
 		System.out.println("Project is running ........");
 	}
