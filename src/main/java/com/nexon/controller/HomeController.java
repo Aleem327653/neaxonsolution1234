@@ -26,6 +26,17 @@ public class HomeController {
 
     @GetMapping("/{id}")
     public Company singleCompnany(@PathVariable Integer id){
+
         return this.serviceImp.fetchSingleCompany(id);
+    }
+
+    @GetMapping("/{name}")
+    public Company getCompany(@PathVariable String name){
+        return this.serviceImp.findByCompanyName(name);
+    }
+
+    @PutMapping("/{id}")
+    public Company updateCompany(@RequestBody Company com,@PathVariable Integer id){
+        return this.serviceImp.updateCompany(com,id);
     }
 }
