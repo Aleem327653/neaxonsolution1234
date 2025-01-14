@@ -22,7 +22,7 @@ public class HomeController {
        if(c!=null){
            return new ResponseEntity<>(c, HttpStatus.CREATED);
        }else{
-           return new ResponseEntity<>(HttpStatus.CONFLICT);
+           return new ResponseEntity<>(HttpStatus.NOT_ACCEPTABLE);
        }
     }
 
