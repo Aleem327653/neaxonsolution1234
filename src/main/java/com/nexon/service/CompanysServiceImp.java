@@ -39,4 +39,9 @@ public class CompanysServiceImp implements CompanyService{
         repo.save(com);
         return com;
     }
+
+    @Override
+    public void deleteCompany(Integer id) {
+        repo.deleteById(id);
+    }
 }
