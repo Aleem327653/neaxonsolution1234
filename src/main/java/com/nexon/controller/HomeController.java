@@ -15,7 +15,8 @@ public class HomeController {
     @Autowired
     private CompanysServiceImp serviceImp;
     @PostMapping
-    public Company addCompany(@RequestBody Company company){
+    public Company addCompany(@RequestBody Company company)
+    {
          return this.serviceImp.addCompany(company);
     }
 }
