@@ -3,6 +3,7 @@ package com.nexon.service;
 import com.nexon.model.Company;
 import com.nexon.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,12 +14,17 @@ public class CompanysServiceImp implements CompanyService{
     private CompanyRepository repo;
     @Override
     public Company addCompany(Company company) {
-        return repo.save(company);
+        try{
+            return repo.save(company);
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     public Company fetchSingleCompany(Integer id) {
-        return repo.findById(id).get();
+        return repo.findById(id).orElse(null);
     }
 
     @Override
@@ -28,20 +34,36 @@ public class CompanysServiceImp implements CompanyService{
 
     @Override
     public Company findByCompanyName(String companyName) {
-        return repo.findByCompanyName(companyName);
+        try{
+            return repo.findByCompanyName(companyName);
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
+
     }
 
     @Override
     public Company updateCompany(Company company, Integer id) {
-        Company com=repo.findById(id).get();
-        com.setCompanyName(company.getCompanyName());
-        com.setAddress(company.getAddress());
-        repo.save(com);
-        return com;
+        try {
+            Company com = repo.findById(id).get();
+            com.setCompanyName(company.getCompanyName());
+            com.setAddress(company.getAddress());
+            repo.save(com);
+            return com;
+        }catch (Exception ex){
+            ex.printStackTrace();
+            return null;
+        }
     }
 
     @Override
     public void deleteCompany(Integer id) {
-        repo.deleteById(id);
+        try{
+            repo.deleteById(id);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+
     }
 }
