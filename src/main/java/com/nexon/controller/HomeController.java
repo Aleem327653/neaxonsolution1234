@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/company")
+@RequestMapping("company")
 public class HomeController {
 
     @Autowired
@@ -24,18 +24,18 @@ public class HomeController {
         return this.serviceImp.findAllCompany();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("{id}")
     public Company singleCompnany(@PathVariable Integer id){
 
         return this.serviceImp.fetchSingleCompany(id);
     }
 
-    @GetMapping("/{name}")
+    @GetMapping("/companyname/{name}")
     public Company getCompany(@PathVariable String name){
         return this.serviceImp.findByCompanyName(name);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("{id}")
     public Company updateCompany(@RequestBody Company com,@PathVariable Integer id){
         return this.serviceImp.updateCompany(com,id);
     }
