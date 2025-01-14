@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class NexonApplication {
 
 	public static void main(String[] args) {
-
+        int x=10;
 		SpringApplication.run(NexonApplication.class, args);
-		System.out.println("Project is running ........s");
+		System.out.println("Project is running ........");
 	}
 
 }
