@@ -7,6 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class NexonApplication {
 
 	public static void main(String[] args) {
+        int x=10;
+		    int y=20;
         String str="Aleem";
 		String name="Khan";
 		SpringApplication.run(NexonApplication.class, args);
